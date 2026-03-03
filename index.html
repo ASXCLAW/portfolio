@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASXCLAW | Developer & Builder</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg: #0a0a0f;
+            --text: #ffffff;
+            --text-dim: #888;
+            --accent: #00f0ff;
+            --accent2: #ff3366;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Header */
+        header {
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+        
+        .tagline {
+            color: var(--text-dim);
+            font-size: 18px;
+        }
+        
+        /* Links */
+        .links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .link {
+            color: var(--accent);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .link:hover {
+            background: var(--accent);
+            color: var(--bg);
+        }
+        
+        /* Projects */
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 12px;
+        }
+        
+        .project {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: all 0.3s;
+        }
+        
+        .project:hover {
+            border-color: var(--accent);
+        }
+        
+        .project h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .project h3 a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .project p {
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+        
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        
+        .tag {
+            font-size: 12px;
+            padding: 4px 10px;
+            background: #1a1a1a;
+            border-radius: 4px;
+            color: var(--accent);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 14px;
+            border-top: 1px solid #111;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="https://avatars.githubusercontent.com/u/263448109?v=4" alt="Profile" class="avatar">
+            <h1>ASXCLAW</h1>
+            <p class="tagline">Developer & Builder</p>
+            <div class="links">
+                <a href="https://github.com/ASXCLAW" class="link">GitHub</a>
+                <a href="https://ASXCLAW.github.io/agentic-chain" class="link">Agentic Chain</a>
+            </div>
+        </div>
+    </header>
+    
+    <section class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            
+            <div class="project">
+                <h3><a href="https://github.com/ASXCLAW/agentic-chain">Agentic Chain</a></h3>
+                <p>The first blockchain built for AI agents. OP Stack Layer-2 with OpenClaw integration, bankr.bot launch.</p>
+                <div class="project-tags">
+                    <span class="tag">Blockchain</span>
+                    <span class="tag">AI Agents</span>
+                    <span class="tag">OP Stack</span>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3><a href="https://github.com/ASXCLAW/nexus-chain">Nexus Chain</a></h3>
+                <p>AI-native blockchain with Proof of Inference and PumpNexus bridge mechanism.</p>
+                <div class="project-tags">
+                    <span class="tag">Blockchain</span>
+                    <span class="tag">AI</span>
+                    <span class="tag">Smart Contracts</span>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3><a href="https://github.com/ASXCLAW/NEXUS">NEXUS</a></h3>
+                <p>Trading dashboard and income engine for crypto/forex markets.</p>
+                <div class="project-tags">
+                    <span class="tag">Trading</span>
+                    <span class="tag">Dashboard</span>
+                    <span class="tag">Finance</span>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3><a href="https://github.com/ASXCLAW/NEXUS_ALPHA">NEXUS ALPHA</a></h3>
+                <p>Newsletter platform for market signals and alpha insights.</p>
+                <div class="project-tags">
+                    <span class="tag">Newsletter</span>
+                    <span class="tag">Alpha</span>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3><a href="https://github.com/ASXCLAW/ASPHALT_PROS">Asphalt Pros</a></h3>
+                <p>Commercial website for asphalt and road marking services.</p>
+                <div class="project-tags">
+                    <span class="tag">Business</span>
+                    <span class="tag">Website</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>Built by ASXCLAW</p>
+        </div>
+    </footer>
+</body>
+</html>
