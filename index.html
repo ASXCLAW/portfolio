@@ -9,10 +9,12 @@
         
         :root {
             --bg: #0a0a0f;
-            --text: #ffffff;
+            --bg2: #111;
+            --text: #fff;
             --text-dim: #888;
             --accent: #00f0ff;
             --accent2: #ff3366;
+            --gradient: linear-gradient(135deg, var(--accent), var(--accent2));
         }
         
         body {
@@ -20,41 +22,45 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
+            min-height: 100vh;
         }
         
         .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
         
-        /* Header */
-        header {
-            padding: 40px 0;
+        /* Hero */
+        .hero {
+            padding: 80px 0 40px;
             text-align: center;
+            background: radial-gradient(ellipse at 50% 0%, rgba(0,240,255,0.1), transparent 60%);
         }
         
         .avatar {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            object-fit: cover;
             border: 3px solid var(--accent);
+            box-shadow: 0 0 30px rgba(0,240,255,0.3);
             margin-bottom: 20px;
         }
         
         h1 {
-            font-size: 36px;
+            font-size: 42px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 8px;
         }
         
         .tagline {
             color: var(--text-dim);
             font-size: 18px;
+            margin-bottom: 24px;
         }
         
-        /* Links */
         .links {
             display: flex;
-            gap: 16px;
+            gap: 12px;
             justify-content: center;
-            margin-top: 24px;
             flex-wrap: wrap;
         }
         
@@ -65,6 +71,7 @@
             border: 1px solid var(--accent);
             border-radius: 8px;
             transition: all 0.3s;
+            font-size: 14px;
         }
         
         .link:hover {
@@ -72,55 +79,65 @@
             color: var(--bg);
         }
         
-        /* Projects */
-        .section {
-            padding: 60px 0;
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 0;
         }
         
-        .section h2 {
-            font-size: 28px;
-            margin-bottom: 24px;
-            border-bottom: 1px solid #222;
-            padding-bottom: 12px;
+        .stat { text-align: center; }
+        .stat-value { font-size: 32px; font-weight: bold; color: var(--accent); }
+        .stat-label { font-size: 13px; color: var(--text-dim); }
+        
+        /* Projects */
+        .projects { padding: 40px 0; }
+        
+        .projects h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .project {
-            background: #111;
+            background: var(--bg2);
             border: 1px solid #222;
             border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 16px;
+            padding: 20px;
+            margin-bottom: 12px;
             transition: all 0.3s;
         }
         
         .project:hover {
             border-color: var(--accent);
+            transform: translateX(4px);
         }
         
-        .project h3 {
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
+        .project h3 { margin-bottom: 6px; }
         
         .project h3 a {
             color: var(--text);
             text-decoration: none;
+            font-size: 18px;
         }
         
-        .project p {
-            color: var(--text-dim);
-            font-size: 14px;
-        }
+        .project h3 a:hover { color: var(--accent); }
         
-        .project-tags {
+        .project p { color: var(--text-dim); font-size: 14px; }
+        
+        .tags {
             display: flex;
-            gap: 8px;
-            margin-top: 12px;
+            gap: 6px;
+            margin-top: 10px;
+            flex-wrap: wrap;
         }
         
         .tag {
-            font-size: 12px;
-            padding: 4px 10px;
+            font-size: 11px;
+            padding: 4px 8px;
             background: #1a1a1a;
             border-radius: 4px;
             color: var(--accent);
@@ -131,82 +148,94 @@
             padding: 40px 0;
             text-align: center;
             color: var(--text-dim);
-            font-size: 14px;
+            font-size: 13px;
             border-top: 1px solid #111;
-            margin-top: 40px;
+        }
+        
+        .github-link {
+            color: var(--accent);
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-    <header>
+    <section class="hero">
         <div class="container">
             <img src="https://avatars.githubusercontent.com/u/263448109?v=4" alt="Profile" class="avatar">
             <h1>ASXCLAW</h1>
-            <p class="tagline">Developer & Builder</p>
+            <p class="tagline">Developer & Builder | AI & Blockchain</p>
             <div class="links">
-                <a href="https://github.com/ASXCLAW" class="link">GitHub</a>
-                <a href="https://ASXCLAW.github.io/agentic-chain" class="link">Agentic Chain</a>
-            </div>
-        </div>
-    </header>
-    
-    <section class="section">
-        <div class="container">
-            <h2>Projects</h2>
-            
-            <div class="project">
-                <h3><a href="https://github.com/ASXCLAW/agentic-chain">Agentic Chain</a></h3>
-                <p>The first blockchain built for AI agents. OP Stack Layer-2 with OpenClaw integration, bankr.bot launch.</p>
-                <div class="project-tags">
-                    <span class="tag">Blockchain</span>
-                    <span class="tag">AI Agents</span>
-                    <span class="tag">OP Stack</span>
-                </div>
-            </div>
-            
-            <div class="project">
-                <h3><a href="https://github.com/ASXCLAW/nexus-chain">Nexus Chain</a></h3>
-                <p>AI-native blockchain with Proof of Inference and PumpNexus bridge mechanism.</p>
-                <div class="project-tags">
-                    <span class="tag">Blockchain</span>
-                    <span class="tag">AI</span>
-                    <span class="tag">Smart Contracts</span>
-                </div>
-            </div>
-            
-            <div class="project">
-                <h3><a href="https://github.com/ASXCLAW/NEXUS">NEXUS</a></h3>
-                <p>Trading dashboard and income engine for crypto/forex markets.</p>
-                <div class="project-tags">
-                    <span class="tag">Trading</span>
-                    <span class="tag">Dashboard</span>
-                    <span class="tag">Finance</span>
-                </div>
-            </div>
-            
-            <div class="project">
-                <h3><a href="https://github.com/ASXCLAW/NEXUS_ALPHA">NEXUS ALPHA</a></h3>
-                <p>Newsletter platform for market signals and alpha insights.</p>
-                <div class="project-tags">
-                    <span class="tag">Newsletter</span>
-                    <span class="tag">Alpha</span>
-                </div>
-            </div>
-            
-            <div class="project">
-                <h3><a href="https://github.com/ASXCLAW/ASPHALT_PROS">Asphalt Pros</a></h3>
-                <p>Commercial website for asphalt and road marking services.</p>
-                <div class="project-tags">
-                    <span class="tag">Business</span>
-                    <span class="tag">Website</span>
-                </div>
+                <a href="https://github.com/ASXCLAW" class="link" target="_blank">GitHub</a>
+                <a href="https://ASXCLAW.github.io/agentic-chain" class="link" target="_blank">Agentic Chain</a>
+                <a href="https://github.com/ASXCLAW/agentic-chain" class="link" target="_blank">CLI Tool</a>
             </div>
         </div>
     </section>
     
+    <div class="container">
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">10+</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">2</div>
+                <div class="stat-label">Blockchains</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">2026</div>
+                <div class="stat-label">Year</div>
+            </div>
+        </div>
+        
+        <section class="projects">
+            <h2>🚀 Featured Projects</h2>
+            
+            <div class="project">
+                <h3><a href="https://github.com/ASXCLAW/agentic-chain" target="_blank">Agentic Chain</a></h3>
+                <p>The first blockchain built for AI agents. OP Stack Layer-2 with OpenClaw integration. Zero-cost launch via bankr.bot.</p>
+                <div class="tags">
+                    <span class="tag">Blockchain</span>
+                    <span class="tag">AI Agents</span>
+                    <span class="tag">OP Stack</span>
+                    <span class="tag">OpenClaw</span>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3><a href="https://github.com/ASXCLAW/nexus-chain" target="_blank">Nexus Chain</a></h3>
+                <p>AI-native blockchain with Proof of Inference, PumpNexus bridge, and agent marketplace.</p>
+                <div class="tags">
+                    <span class="tag">Blockchain</span>
+                    <span class="tag">AI</span>
+                    <span class="tag">PoI</span>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3><a href="https://github.com/ASXCLAW/LIFE_SERIES_COVERS" target="_blank">Life Series Books</a></h3>
+                <p>Philosophical sci-fi book series exploring the future of consciousness, from AI to multiverse.</p>
+                <div class="tags">
+                    <span class="tag">Books</span>
+                    <span class="tag">Sci-Fi</span>
+                    <span class="tag">Philosophy</span>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3><a href="https://github.com/ASXCLAW/TALOS" target="_blank">TALOS</a></h3>
+                <p>Automation framework for trading and system operations.</p>
+                <div class="tags">
+                    <span class="tag">Automation</span>
+                    <span class="tag">Trading</span>
+                </div>
+            </div>
+        </section>
+    </div>
+    
     <footer>
         <div class="container">
-            <p>Built by ASXCLAW</p>
+            <p>Built by <a href="https://github.com/ASXCLAW" class="github-link">ASXCLAW</a> | 2026</p>
         </div>
     </footer>
 </body>
